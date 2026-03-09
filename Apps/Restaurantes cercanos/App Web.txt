@@ -1,0 +1,5 @@
+Crea un aplicación web que permita a los usuarios ver una lista
+de restaurantes cercanos la app debe de permitir a los usuarios ver los restaurantes
+en un mapa 
+asi como ver información de los restaurantes el horario de apertura y cierre
+y los platillos disponibles

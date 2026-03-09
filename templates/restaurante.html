@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>{{ restaurante.nombre }}</title>
+</head>
+
+<body>
+
+<h1>{{ restaurante.nombre }}</h1>
+
+<p><b>Horario:</b> {{ restaurante.horario }}</p>
+
+<h2>Platillos</h2>
+
+<ul>
+
+{% for p in restaurante.platillos %}
+
+<li>{{ p }}</li>
+
+{% endfor %}
+
+</ul>
+
+<a href="/">Volver</a>
+
+</body>
+
+</html>

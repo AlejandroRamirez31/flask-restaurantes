@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title >Malikome: Restaurantes cercanos</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+
+<h1 >Malikome: Restaurantes cercanos</h1>
+
+<h2>Mapa de restaurantes</h2>
+
+<div id="map"></div>
+
+<div class="contenedor">
+
+{% for r in restaurantes %}
+
+<div class="card">
+
+<h2>{{ r.nombre }}</h2>
+
+<img src="{{ url_for('static', filename='imagenes/' + r.imagen) }}">
+
+<p><b>Horario:</b> {{ r.horario }}</p>
+
+<a href="/restaurante/{{ loop.index0 }}" class="boton">Ver menú</a>
+
+<h3>Platillos</h3>
+
+<ul>
+
+{% for platillo in r.platillos %}
+
+<li>{{ platillo }}</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+<script>
+
+var map = L.map('map').setView([20.705, -103.345], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+}).addTo(map);
+
+{% for r in restaurantes %}
+
+L.marker([{{ r.lat }}, {{ r.lng }}]).addTo(map)
+.bindPopup("<b>{{ r.nombre }}</b><br>{{ r.horario }}");
+
+{% endfor %}
+
+</script>
+
+</body>
+
+</html>
