@@ -179,6 +179,15 @@ http://127.0.0.1:5000
 
 ---
 
+Dedicatoria / Dedication
+
+Este proyecto está dedicado a Malik, ni hijo.
+Su nombre vive en este proyecto como un pequeño homenaje.
+
+
+This project is dedicated to Malik, our son.
+His name lives in this project as a small tribute.
+
 # 👨‍💻 Autor / Author
 
 **Alejandro Ramirez Morelos**
